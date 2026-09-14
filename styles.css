@@ -1,0 +1,251 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #1b2430;
+  --muted: #556174;
+  --primary: #3c6df0;
+  --primary-dark: #334fbd;
+  --danger: #ef5350;
+  --shadow: 0 18px 40px rgba(51, 80, 133, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background: white;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.brand p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.cart-summary {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.cart-summary button,
+.checkout-button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cart-summary button:hover,
+.checkout-button:hover {
+  background: var(--primary-dark);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 24px 48px;
+}
+
+.products-panel,
+.cart-panel {
+  background: white;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.products-header input {
+  width: 220px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid #d6dce8;
+  color: var(--text);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  border-radius: 24px;
+  background: var(--bg);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.product-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.product-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.product-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-actions span {
+  font-weight: 700;
+}
+
+.product-actions button {
+  border: none;
+  border-radius: 18px;
+  padding: 10px 16px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+.cart-panel {
+  position: sticky;
+  top: 96px;
+  max-height: calc(100vh - 120px);
+  overflow: hidden;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.cart-header button {
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.cart-items {
+  display: grid;
+  gap: 14px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 20px;
+  background: var(--bg);
+}
+
+.cart-item-details {
+  display: grid;
+  gap: 4px;
+}
+
+.cart-item strong {
+  display: block;
+}
+
+.cart-item small {
+  color: var(--muted);
+}
+
+.cart-item-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.cart-item-actions button {
+  border: none;
+  border-radius: 14px;
+  padding: 8px 12px;
+  background: #e1e8ff;
+  color: var(--primary-dark);
+  cursor: pointer;
+}
+
+.empty-cart {
+  margin: 0;
+  color: var(--muted);
+}
+
+.cart-footer {
+  margin-top: 20px;
+  border-top: 1px solid #e6ecf5;
+  padding-top: 18px;
+}
+
+.cart-summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-panel {
+    position: relative;
+    top: auto;
+    max-height: none;
+  }
+}
